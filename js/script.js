@@ -12,3 +12,15 @@ console.log('connected...')
 *9. Store count of unique words, most/least used words and the longest word in object.
 *10. Create a method that accpets a string value and returns the word count of that string value.
 */
+
+let xhr = new XMLHttpRequest()
+
+xhr.onreadystatechange = function (){
+    if (this.readyState == 4 && this.status == 200) {
+       document.getElementById("demo").innerHTML = this.responseText
+    }
+
+}
+
+xhr.open("GET", "https://class-demo-files-and-resources.s3.amazonaws.com/Green-Eggs-And-Ham.txt",true)
+xhr.send()
