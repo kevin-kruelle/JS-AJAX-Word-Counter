@@ -25,31 +25,20 @@ xhr.onreadystatechange = function (){
 xhr.open("GET", "https://class-demo-files-and-resources.s3.amazonaws.com/Green-Eggs-And-Ham.txt",true)
 xhr.send()
 
-const arr = []
-arr.push(xhr)
-console.log(arr);
 
-function parseResponse(string) {
+let parseResponse = (string) => {
     document.getElementById("demo").innerHTML = string;
-    for (let i = 0; i < string.length; i++) {
-        if (string[i] == ' ') {
-            string[i].split(arr, ' ')
+    let splitResponse = string.split(' ');
+        console.log(splitResponse)
+    let checked = {}
+    for (let word of splitResponse) {
+        if (checked[word]) {
+            checked[word] = checked[word] +1;
+        } else {
+            checked[word] = 1;
         }
     }
+    console.log(checked)
 }
 
-console.log(parseResponse(arr));
 
-
-// functtion splitData(spaces) {
-//     for (let i = 0; i < spaces.length; i++) {
-//         spaces[i] = spli
-//     }
-// }
-
-// let stringToArray = splitString(manipulate, ' ');
-
-// let splitString = function(stringToSplit, seperator) {
-//     const arrayOfStrings = stringToSplit.split(' ');
-//     return arrayOfStrings;
-// }
