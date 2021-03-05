@@ -35,21 +35,21 @@ let parseResponse = function(string) {
     document.getElementById("demo").innerHTML = string;
 
     //Split long string into multiple strings and stored in array splitResponse
-    
-    
-    let splitResponse = string.split('\n');
-
-    let splitResponseBySpace = (string) => {
-        for (let i = 0; i < string.length; i++) {
-            string[i] = splitResponse(string[i], ' ')
+    let splitResponse = string.split('\n')
+    // console.log(splitResponse)
+    let response = [];
+    let splitResponseBySpace = (arr) => {
+        
+        for (let i = 0; i < arr.length; i++) {
+            response.concat(arr[i].split(' '))
         }
-        return string
+        console.log(response)
     }
-    let parseResponse = splitResponseBySpace(splitResponse)
+  splitResponseBySpace(splitResponse)
     
     
-    // splitResponseSplit = string.split(' ')
-        console.log(parseResponse)
+//     splitResponseSplit = string.split(' ')
+   
 
     //Checked to see how many times a string occurs in the array and logged output.
     let checked = {};
@@ -60,7 +60,7 @@ let parseResponse = function(string) {
             checked[word] = 1;
         }
     }
-    //console.log(checked)
+    console.log(checked)
 
  // Loop through array SplitResponse. Will determine which string is the longest and store amount of charectors in the variable lgth. Which ever string is determined to be the longest will be stored in the variable longest.
         let lgth = 0;
@@ -71,10 +71,10 @@ let parseResponse = function(string) {
             longest = splitResponse[i];
         } 
     }
-    //console.log(longest, lgth)
+    console.log(longest, lgth)
 
     let wordCount = splitReponse.length;
-    //console.log(wordCount)
+    console.log(wordCount)
 }
 
 
