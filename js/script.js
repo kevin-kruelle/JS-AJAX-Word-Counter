@@ -36,6 +36,9 @@ let parseResponse = function(string) {
 
     //Split long string into multiple strings and stored in array splitResponse
     let splitResponse = string.split('\n').join(',').split(' ').join(',').split('-').join(',').split('!').join(',').split('?').join(',').split('.').join(',').split(',')
+    splitResponse = splitResponse.filter(function(entry) {
+        return entry.trim() != '';
+    });
     console.log(splitResponse)
 
     
