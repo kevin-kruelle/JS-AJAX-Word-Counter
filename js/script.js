@@ -35,22 +35,10 @@ let parseResponse = function(string) {
     document.getElementById("demo").innerHTML = string;
 
     //Split long string into multiple strings and stored in array splitResponse
-    let splitResponse = string.split('\n')
-    // console.log(splitResponse)
-    let response = [];
-    let splitResponseBySpace = (arr) => {
-        
-        for (let i = 0; i < arr.length; i++) {
-            response.concat(arr[i].split(' '))
-        }
-        console.log(response)
-    }
-  splitResponseBySpace(splitResponse)
-    
-    
-//     splitResponseSplit = string.split(' ')
-   
+    let splitResponse = string.split('\n').join(',').split(' ').join(',').split('-').join(',').split('!').join(',').split('?').join(',').split('.').join(',').split(',')
+    console.log(splitResponse)
 
+    
     //Checked to see how many times a string occurs in the array and logged output.
     let checked = {};
     for (let word of splitResponse) {
@@ -73,8 +61,8 @@ let parseResponse = function(string) {
     }
     console.log(longest, lgth)
 
-    let wordCount = splitReponse.length;
-    console.log(wordCount)
+    let stringCount = splitReponse.length;
+    console.log(stringCount)
 }
 
 
